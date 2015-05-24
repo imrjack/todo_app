@@ -1,0 +1,46 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import 'bootstrap-datetimepicker';
+
+.navbar .nav {
+  padding-left: 0px;
+  display: inline;
+}
+
+#content {
+  background-color: #6f5499;
+  background-image: linear-gradient(to bottom, #563d7c 0px, #6f5499 100%);
+  background-repeat: repeat-x;
+}
+
+.navbar-header, .navbar-brand,h1,a, a:link,a:hover {
+  text-decoration: none;
+  margin-top: -.20em;
+  color: #fff;
+}
+
+.tasks{
+  margin: 1em;
+  padding:0;
+  height:30em;
+  width:20em;
+  background-color: #dcdcdc;
+  border-style:solid;
+  border-radius:10px;
+  border-width: 2px;
+  border-color: #000000;
+}
+
