@@ -1,17 +1,28 @@
 <div class='tasks'>
   <div class= 'container-fluid'>
     <h4 style='text-align: center'>Tasks</h4> 
-
-      <%= form_for @task do |f| %>
-        <%= f.label :description, 'create a task'%>
-        <%= f.text_field :description %>
-        <%= f.date_select :due_date%>
-        <%= f.submit %>
-        
-      <% end %>
-
-
-
-  </div>
+    <%= render 'form' %>
     
+    </br>
+    </br>
+    
+    <div id='user_tasks'>
+      <% @tasks.each do |task| %>
+        <ul>
+            <li>
+            <%= task.description %>
+          <%= link_to edit_task_path(task), method: 'get', remote: 'true' do %> 
+          <span class = 'edit_task_<%=task.id%> glyphicon glyphicon-pencil' role: 'button' rel:'popover'> </span>
+          <% end %>
+            </li>
+        </ul>
+      <% end %> 
+    </div>    
+  </div>
 </div>
+
+
+
+<script>
+  $( "#date" ).datepicker();
+</script>

@@ -14,6 +14,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import 'bootstrap-datetimepicker';
+@import 'jquery-ui';
 
 .navbar .nav {
   padding-left: 0px;
@@ -35,8 +36,8 @@
 .tasks{
   margin: 1em;
   padding:0;
-  height:30em;
-  width:20em;
+  min-height:30em;
+  max-width:20em;
   background-color: #dcdcdc;
   border-style:solid;
   border-radius:10px;
@@ -44,3 +45,13 @@
   border-color: #000000;
 }
 
+.glyphicon{
+  padding:0;
+  display: inline;
+}
+
+.form{
+  min-height:15em;
+  min-width:10em;
+
+}  
