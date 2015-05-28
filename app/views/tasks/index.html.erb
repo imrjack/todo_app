@@ -10,10 +10,10 @@
       <% @tasks.each do |task| %>
         <ul>
             <li>
-            <%= task.description %>
-          <%= link_to edit_task_path(task), method: 'get', remote: 'true' do %> 
-          <span class = 'edit_task_<%=task.id%> glyphicon glyphicon-pencil' role: 'button' rel:'popover'> </span>
-          <% end %>
+              <%= task.description %>
+              <%=link_to(edit_task_path(task),"data-toggle"=>"popover", remote:'true') do %> 
+                <span id='edit_<%=task.id%>' class= 'form glyphicon glyphicon-pencil'></span>
+              <% end %>
             </li>
         </ul>
       <% end %> 
@@ -22,7 +22,3 @@
 </div>
 
 
-
-<script>
-  $( "#date" ).datepicker();
-</script>

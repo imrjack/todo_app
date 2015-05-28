@@ -1,9 +1,10 @@
 $(function(){
-    $('.edit_task_<%=@task.id%>').popover({
+    $('#edit_<%=@task.id%>').popover({
     html: true,
-    title: 'edit',
-    content: '<%= escape_javascript render 'edit_form', task: @task %>',
+    url: "tasks/<%=@task.id%>/edit", 
     placement: 'bottom',
-  }).popover('show');
+    title: 'title',
+    content: '<%= escape_javascript render 'edit_form' %>'
+    });
 });
 
