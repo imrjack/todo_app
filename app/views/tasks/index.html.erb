@@ -6,7 +6,7 @@
     </br>
     </br>
     
-    <div id='user_tasks'>
+    <div class='user_tasks'>
       <% @tasks.each do |task| %>
         <ul>
             <li>
@@ -14,6 +14,7 @@
               <%=link_to(edit_task_path(task),"data-toggle"=>"popover", remote:'true') do %> 
                 <span id='edit_<%=task.id%>' class= 'form glyphicon glyphicon-pencil'></span>
               <% end %>
+              <span class= 'task_pop' id= 'popover_<%=task.id%>'></span>
             </li>
         </ul>
       <% end %> 
