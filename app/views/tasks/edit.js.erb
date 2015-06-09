@@ -1,8 +1,9 @@
- $('#popover_<%=@task.id%>').popover({
-    html: true,
-    url: "tasks/<%=@task.id%>/edit",
-    container: 'body',
-    placement: 'bottom',
-    title: 'title',
-    content: '<%= escape_javascript render 'edit_form', task: @task %>'
-    }).popover('toggle');
+// $('#popover_<%=@task.id%>').popover({
+//   html: true,
+//   url: "tasks<%=@task.id%>/edit",
+//   placement: 'bottom',
+//   title: 'edit',
+//   content: '<%= escape_javascript render 'edit_form', task: @task %>'
+// }).popover('toggle').slideDown("slow");
+$('#edit<%=@task.id%>').slideToggle('slow');
+

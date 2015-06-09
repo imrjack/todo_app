@@ -13,14 +13,18 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import 'bootstrap-datetimepicker';
 @import 'jquery-ui';
+@import "pickadate/classic";
+@import "pickadate/classic.date";
+@import "pickadate/classic.time";
 
 .navbar .nav {
   padding-left: 0px;
   display: inline;
 }
-
+ul{
+  padding:0;
+}
 #content {
   background-color: #6f5499;
   background-image: linear-gradient(to bottom, #563d7c 0px, #6f5499 100%);
@@ -34,33 +38,59 @@
 }
 
 .tasks{
-  margin: 1em;
-  padding:0;
+  margin-top: 1em;
   min-height:30em;
   max-width:20em;
   background-color: #dcdcdc;
   border-style:solid;
-  border-radius:10px;
   border-width: 2px;
   border-color: #000000;
+  padding-bottom: 1em;
 }
 
-.glyphicon{
-  padding:0;
-  display: inline;
+
+.edit_popover{
+  display: none;
+  padding-top:1em;
+  border-width: 2px;
+  border-color: #000000;
+  height:20em;
+  background-color: #dcdcdc;
+}
+.task-description{
+  margin-top:  -1.5em;
 }
 
-.form{
-  min-height:15em;
-  min-width:10em;
+.the-form{
+  text-align: center;
 }
 
-.task_pop{
-  position: static;
-  display:block;
+.user-tasks{
+  margin: .5em;
+  
 }
-.pop{
-  position: static;
-  min-height:10em;
-  min-width:10em;
+
+.easy{
+  background-color: #00CCFF;
+}
+
+.medium{
+  background-color: #99cc33;
+}
+
+.hard{
+  background-color: #f08080;
+}
+//form//
+.form-group{
+  text-align:center;
+}
+//pickerdate//
+
+.picker__holder{
+  margin-left:-1em;
+} 
+
+.picker__table{
+  font-size: .65em;
 }

@@ -1,25 +1,44 @@
-<div class='tasks'>
-  <div class= 'container-fluid'>
+<div class= 'container-fluid'>
+  <div class='tasks'>
+
     <h4 style='text-align: center'>Tasks</h4> 
-    <%= render 'form' %>
+    <div class='row'>
+      <div class='col-sm-12 the-form'><%= render 'form' %></div>
+    </div>
     
     </br>
     </br>
     
-    <div class='user_tasks'>
       <% @tasks.each do |task| %>
-        <ul>
-            <li>
-              <%= task.description %>
-              <%=link_to(edit_task_path(task),"data-toggle"=>"popover", remote:'true') do %> 
-                <span id='edit_<%=task.id%>' class= 'form glyphicon glyphicon-pencil'></span>
-              <% end %>
-              <span class= 'task_pop' id= 'popover_<%=task.id%>'></span>
-            </li>
-        </ul>
-      <% end %> 
-    </div>    
+       <div class= '<%= task.priority %> user-tasks' >
+        <span class='row row-fluid'>
+          <span class='col-xs-9'>
+            <% if task.due_date ==nil %>
+              <h5 class='small'>Due Date</h5>
+            <% else %>
+              <%= datetime_format(task.due_date) %>
+            <% end %>
+          </span>
+          
+            <%=link_to(edit_task_path(task),remote:'true') do %> 
+            <span class='col-xs-3'>
+              <span id='edit_<%=task.id%>' class= 'glyphicon glyphicon-pencil'></span>
+            </span>
+            <% end %>
+          </span>
+            <span class='row row-fluid'>
+
+          <span class= 'task-description col-xs-12'>
+            <%= task.description %>
+             <span class= 'col-xs-12 edit_popover <%=task.priority %>' id= 'edit<%=task.id%>'><%= render 'edit_form', task: task %> </span>
+          </span>
+    
+        </span>
+    
   </div>
+      <% end %> 
+  </div>
+
 </div>
 
 

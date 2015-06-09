@@ -1,10 +1,22 @@
-<div class= 'pop container'>
-<%= form_for task, :html=>{:class=> 'form-inline'} do |f| %>
+<%= form_for task do |f| %>
   <div class='form-group'>
-    <%= f.text_field :description, placeholder: 'create a task' %>
-    <%= button_tag(type:'submit', class:"btn btn-default btn-xs") do %>
-      <span class='glyphicon glyphicon-plus'></span>
-    <% end %>
+    <%= f.text_field :description, placeholder: 'create a task'%>
   </div>
+  
+  <div class='form-group'>
+    <%= f.text_field :due_date, id:"'due_date_'#{task.id}", class:'date', placeholder: 'due date'%>
+  </div>
+  
+  <hr>
+  <%= button_tag(type:'patch', class:"btn btn-default btn-xs") do %>
+      <span>Save and Close</span>
+  <% end %>
+
 <% end %>
-</div>
+
+
+<script>
+$('.date').each(function(){
+  $(this).pickadate();
+});
+</script>

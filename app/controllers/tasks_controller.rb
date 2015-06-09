@@ -6,12 +6,12 @@ class TasksController < ApplicationController
 
   def index
     @new_task= Task.new
-    @tasks= Task.all 
-  end
+    @tasks= Task.all
+    end
 
   def create
     @new_task= Task.new(task_params)
-    @task.save
+    @new_task.save
     redirect_to :back
   end
 
@@ -21,7 +21,7 @@ class TasksController < ApplicationController
 
   def update
     @task=Task.find(params[:id])
-    @task.save
+    @task.update_attributes(task_params)
     redirect_to :back
   end
 

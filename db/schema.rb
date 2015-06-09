@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150524055336) do
+ActiveRecord::Schema.define(version: 20150602220829) do
 
   create_table "habits", force: :cascade do |t|
     t.integer  "user_id"
@@ -38,7 +38,9 @@ ActiveRecord::Schema.define(version: 20150524055336) do
     t.string   "start_date"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.datetime "due_date"
+    t.string   "priority"
+    t.date     "due_date"
+    t.time     "due_time"
   end
 
   create_table "users", force: :cascade do |t|
