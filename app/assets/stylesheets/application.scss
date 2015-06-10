@@ -37,7 +37,7 @@ ul{
   color: #fff;
 }
 
-.tasks{
+.tasks-box{
   margin-top: 1em;
   min-height:30em;
   max-width:20em;
@@ -46,6 +46,10 @@ ul{
   border-width: 2px;
   border-color: #000000;
   padding-bottom: 1em;
+}
+
+.task{
+    margin:1px;
 }
 
 

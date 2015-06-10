@@ -1,0 +1,29 @@
+
+<div class= 'task <%= task.priority %>' id='user_task_<%=task.id%>' >
+  <span class='row row-fluid'>
+    <span class='col-xs-9'>
+      <% if task.due_date ==nil %>
+        <h5 class='small'>Due Date</h5>
+      <% else %>
+        <%= datetime_format(task.due_date) %>
+      <% end %>
+    </span>
+    
+      <%=link_to(edit_task_path(task),remote:'true') do %> 
+      <span class='col-xs-3'>
+        <span id='edit_<%=task.id%>' class= 'glyphicon glyphicon-pencil'></span>
+      </span>
+      <% end %>
+    </span>
+       
+       <br>
+    <span class='row row-fluid'>
+      
+      <div class= 'task-description col-xs-12'>
+        <%= task.description %>
+        <span class= 'col-xs-12 edit_popover <%=task.priority %>' id= 'edit<%=task.id%>'>
+          <%= render 'edit_form', task: task %> 
+        </span>
+      </div>
+    </span>
+</div>

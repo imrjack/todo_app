@@ -6,13 +6,14 @@ class TasksController < ApplicationController
 
   def index
     @new_task= Task.new
-    @tasks= Task.all
-    end
+    @tasks= Task.all.sort_by{|t|t.due_date.to_s}
+    
+  end
 
   def create
     @new_task= Task.new(task_params)
     @new_task.save
-    redirect_to :back
+    
   end
 
   def edit
