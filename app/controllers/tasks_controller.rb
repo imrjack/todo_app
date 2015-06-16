@@ -1,4 +1,6 @@
 class TasksController < ApplicationController
+  before_action :set_task, only: [:update,:edit,:destroy]
+
   respond_to do |format|
     format.html
     format.js
@@ -17,16 +19,22 @@ class TasksController < ApplicationController
   end
 
   def edit
-    @task= Task.find(params[:id])
   end
 
   def update
-    @task=Task.find(params[:id])
     @task.update_attributes(task_params)
-    redirect_to :back
   end
 
+  def destroy
+    @task.destroy
+  end
+    
+
   private 
+  
+  def set_task
+    @task=Task.find(params[:id])
+  end
 
   def task_params
     params.require(:task).permit(:description,:due_date)

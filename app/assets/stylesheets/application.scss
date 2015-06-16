@@ -17,6 +17,12 @@
 @import "pickadate/classic";
 @import "pickadate/classic.date";
 @import "pickadate/classic.time";
+html,body{
+  width:100%;
+}
+.wrapper{
+  width:100%;
+  }
 
 .navbar .nav {
   padding-left: 0px;
@@ -39,13 +45,18 @@ ul{
 
 .tasks-box{
   margin-top: 1em;
-  min-height:30em;
-  max-width:20em;
+  min-height:100%;
   background-color: #dcdcdc;
   border-style:solid;
   border-width: 2px;
   border-color: #000000;
   padding-bottom: 1em;
+  width:25%;
+}
+
+.tasks-description{
+  padding-right: 30px;
+  margin-top: -1.5em;
 }
 
 .task{
@@ -103,13 +114,17 @@ ul{
   font-weight:bold;
 }
 
-
-
-
-
-
-
-
+// .tasks-box1{
+//   margin-top: 1em;
+//   min-height:100%;
+//   margin-left:1em;
+//   background-color: #dcdcdc;
+//   border-style:solid;
+//   border-width: 2px;
+//   border-color: #000000;
+//   padding-bottom: 1em;
+//   display:inline-block;
+// }
 
 
 
