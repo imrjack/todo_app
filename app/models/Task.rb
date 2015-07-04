@@ -1,5 +1,5 @@
 class Task < ActiveRecord::Base
-
+  belongs_to :user
   validates :description, presence: true
   before_create :default_priority
 

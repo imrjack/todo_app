@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150602220829) do
+ActiveRecord::Schema.define(version: 20150620201831) do
 
   create_table "habits", force: :cascade do |t|
     t.integer  "user_id"
@@ -22,11 +22,13 @@ ActiveRecord::Schema.define(version: 20150602220829) do
   end
 
   create_table "notes", force: :cascade do |t|
-    t.integer  "user_id"
     t.string   "noteable_type"
     t.integer  "noteable_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "task_id"
+    t.string   "description"
+    t.integer  "user_id"
   end
 
   create_table "progresses", force: :cascade do |t|
@@ -41,6 +43,7 @@ ActiveRecord::Schema.define(version: 20150602220829) do
     t.string   "priority"
     t.date     "due_date"
     t.time     "due_time"
+    t.string   "extra_notes"
   end
 
   create_table "users", force: :cascade do |t|
@@ -48,6 +51,8 @@ ActiveRecord::Schema.define(version: 20150602220829) do
     t.string   "time_zone"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name"
+    t.string   "password_digest"
   end
 
 end

@@ -1,24 +1,51 @@
-<%= form_for task, method:'put', remote:'true' do|f| %>
+<%= form_for task, method:'put' do|f| %>
   <div class='form-group'>
-    <%= f.text_field :description,value: task.description, placeholder: 'create a task' %>
+    <%= f.text_field :description,value: task.description%>
   </div>
   
   <div class='form-group'>
-    <%= f.text_field :due_date, id:"due_date_#{task.id}", class:'date',value: task.due_date, readonly:'true',  placeholder: 'due date'%>
+    <%= f.text_field :due_date, id:"due_date_#{task.id}", class:'date', readonly:'true', placeholder:'due date'%>
+  </div>
+
+  <div class='form-group'>
+     <%= f.text_field :due_time, id:"due_time_#{task.id}", class:'time', readonly:'true',:value => "#{task.due_time ? time_format(task.due_time):''}",placeholder:'time'%>  
+   </div>
+
+
+
+  <div class='form-group'>
+  <h6>Extra Notes</h6>
+  <%= f.text_area :extra_notes, id:"notes_#{task.id}", class:'task-notes', rows:5, cols: 21 %>
+  </div>
+
+  <div class= 'form-group priority-btns'>
+    <h6>Priority</h6>
+
+    <%= f.label :priority ,"easy" %> 
+    <%= f.radio_button :priority, 'easy' %>
+
+    <%= f.label :priority ,"medium" %> 
+    <%= f.radio_button :priority, 'medium'%>
+
+    <%= f.label :priority ,"hard" %> 
+    <%= f.radio_button :priority, 'hard'%>
   </div>
   
   <hr>
   <div class='form-group'>
-    <%= button_tag(type:'patch', class:"btn btn-default btn-xs edit-btn", id:'update-btn') do %>
-      <span>Save and Close</span>
+    <%= f.submit 'save',class:"btn btn-default btn-xs edit-btn"%>
   </div>
-  <% end %>
 
-<% end %>
+  <% end %> 
+
+  
 
 
 <script>
   $('.date').each(function(){
     $(this).pickadate();
   });
+  $('.time').each(function(){
+    $(this).pickatime();
+  })
 </script>

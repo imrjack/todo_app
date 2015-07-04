@@ -21,7 +21,11 @@
       <% end %>
 
     </span>
-
+    <span class= 'col-xs-12 task-time'>
+      <% unless task.due_time == nil %>
+        <%= time_format(task.due_time) %>
+      <% end %>
+    </span>
        <br>
     <span class='row row-fluid'>
       

@@ -13,16 +13,19 @@ class TasksController < ApplicationController
   end
 
   def create
+    @tasks=Task.all
     @new_task= Task.new(task_params)
     @new_task.save
-    
   end
+    
 
   def edit
   end
 
   def update
+    @tasks= Task.all.sort_by{|t|t.due_date.to_s}
     @task.update_attributes(task_params)
+    redirect_to :back
   end
 
   def destroy
@@ -37,7 +40,7 @@ class TasksController < ApplicationController
   end
 
   def task_params
-    params.require(:task).permit(:description,:due_date)
+    params.require(:task).permit(:description,:due_date,:priority,:due_time,:extra_notes)
   end
 
 end

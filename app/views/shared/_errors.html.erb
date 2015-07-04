@@ -1,0 +1,18 @@
+<% if obj.errors.any? %>
+  <div class='row alert alert-danger error-msg-box'>
+    <div class='col-sm-12'>
+        <h5>Error:</h5>
+      <% obj.errors.full_messages.each do |msg| %>
+        <ul>
+          <li>
+          <% if msg == "Password confirmation doesn't match Password" %>
+            <%= msg = "Your passwords don't match" %>
+          <% else %>
+            <%= msg %>
+          <% end %>
+          </li>
+        </ul>
+      <% end %>
+    </div>
+  </div>
+<% end %>
