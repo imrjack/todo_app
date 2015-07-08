@@ -7,10 +7,10 @@ class User < ActiveRecord::Base
   validates :username, presence: true, uniqueness: true
   validates :password, length: {minimum:5}
 
-  before_validation :del_space_in_username 
+  before_validation :format_username
 
-  def del_space_in_username
-    self.username.rstrip!
+  def format_username
+    self.username.downcase.rstrip!
   end
 
 end

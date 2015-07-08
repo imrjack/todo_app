@@ -10,12 +10,13 @@
 </head>
 <body>
   <header id='top' tabindex='-1'>
-  <div class='navbar-default' id= 'content'>
+  <nav class='navbar-default' id= 'content'>
     <div class='container-fluid'>
         <%= render 'layouts/navigation' %>
-      </div>
-      </div>
+    </div>
+  </nav>
   </header>
+  <%= render 'layouts/msg' %>
   <%=yield%>
 </body>
 </html>

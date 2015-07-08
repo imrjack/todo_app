@@ -5,7 +5,7 @@
       <% if task.due_date ==nil %>
         <h5 class='small'>Due Date</h5>
       <% else %>
-        <%= datetime_format(task.due_date) %>
+        <%= date_format(task.due_date) %>
       <% end %>
     </span>
     

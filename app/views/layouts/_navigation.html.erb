@@ -8,10 +8,16 @@
       <span class="navbar-brand" ><h1><%=link_to 'ToDoIt!', root_path%></h1></span>
 </div>
 
+
 <div class="collapse navbar-collapse" id="navigation" >
-<ul class="nav navbar-nav navbar-right" >
-  <li role="presentation"><%= link_to 'Register', register_path%></li>
-  <li role="presentation"><%= link_to 'Login', login_path %>  </li>
-  <li role='presentation'> <%= link_to 'Tasks', tasks_path %></li>
-</ul>
+  <ul class="nav navbar-nav navbar-right" >
+    <% unless logged_in? %>
+      <li role="presentation"><%= link_to 'Register', register_path%></li>
+      <li role="presentation"><%= link_to 'Login', login_path %>  </li>
+    <% else %>
+      <li role='presentation'> <%= link_to current_user.username, user_path(current_user.id) %></li>
+      <li role='presentation'> <%= link_to 'Tasks', tasks_path %></li>
+      <li role="presentation"><%= link_to 'Logout', logout_path %>  </li>
+    <% end %>
+  </ul>
 </div>

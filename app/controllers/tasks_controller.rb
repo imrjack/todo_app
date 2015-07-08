@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+  before_action :require_user, except:[:index]
   before_action :set_task, only: [:update,:edit,:destroy]
 
   respond_to do |format|
@@ -7,14 +8,15 @@ class TasksController < ApplicationController
   end
 
   def index
-    @new_task= Task.new
-    @tasks= Task.all.sort_by{|t|t.due_date.to_s}
-    
+    if logged_in?
+      @new_task= current_user.tasks.new
+      @tasks= current_user.tasks.all.sort_by{|t|t.due_date.to_s}
+    else @new
+    end
   end
 
   def create
-    @tasks=Task.all
-    @new_task= Task.new(task_params)
+    @new_task= current_user.tasks.new(task_params)
     @new_task.save
   end
     
@@ -23,7 +25,7 @@ class TasksController < ApplicationController
   end
 
   def update
-    @tasks= Task.all.sort_by{|t|t.due_date.to_s}
+    @tasks= current_user.tasks.all
     @task.update_attributes(task_params)
     redirect_to :back
   end

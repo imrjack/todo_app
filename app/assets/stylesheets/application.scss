@@ -29,14 +29,14 @@ html,body{
 ul{
   padding:0;
 }
+
+hr{
+  margin-right: 2em;
+}
 #content {
   background-color: #6f5499;
   background-image: linear-gradient(to bottom, #563d7c 0px, #6f5499 100%);
   background-repeat: repeat-x;
-}
-
-.navbar-default{
-  height:8em;
 }
 
 .navbar-header, .navbar-brand,h1,a, a:link,a:hover {
@@ -78,7 +78,12 @@ ul{
   margin-top:  -1.5em;
 }
 
-.the-form{
+.task-time{
+  margin-top: -4px;
+  font-size: 10px;
+}
+
+.new-task-form{
   text-align: center;
 }
 
@@ -116,23 +121,8 @@ ul{
   font-weight:bold;
 }
 
-// .tasks-box1{
-//   margin-top: 1em;
-//   min-height:100%;
-//   margin-left:1em;
-//   background-color: #dcdcdc;
-//   border-style:solid;
-//   border-width: 2px;
-//   border-color: #000000;
-//   padding-bottom: 1em;
-//   display:inline-block;
-// }
 
 
-.task-time{
-  margin-top: -4px;
-  font-size: 10px;
-}
 
 // User form
 .default-form-wrapper{
@@ -140,7 +130,7 @@ ul{
   margin-top:2em;
 }
 
-.register-input{
+.form-text-box{
   width:20em;
 }
 

@@ -1,8 +1,20 @@
 <div class='default-form-wrapper'>
 <%= render 'shared/content_title', title:'Log in' %>
 
-<%= form_for %>
+    <%= form_for(:session, url: login_path) do |f| %>
+      <form role= 'form'>
 
-<% end %>
+        <div class= 'form-group form-text-box'>
+          <%= f.label :username %>
+          <%= f.text_field :username, class: 'form-control' %>
+        </div>
+        
+        <div class= 'form-group form-text-box'>
+          <%= f.label :password %>
+          <%= f.password_field :password, class: 'form-control' %>
+        </div>
 
+        <%= f.submit 'Login', class: 'btn btn-primary' %>
+      </form>
+    <% end %>
 </div>
